@@ -1,0 +1,81 @@
+/**
+ * @file
+ * SCSS file for Mixins.
+ *
+ * All mixins used in SCSS are defined in this file.
+ * - For prefix properties 'http://shouldiprefix.com/'
+ */
+
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}:    -moz-calc(#{$expression});
+  #{$property}:         calc(#{$expression});
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value;
+}
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+          appearance: $value;
+}
+@mixin transform($value) {
+  -webkit-transform: $value;
+     -moz-transform: $value;
+      -ms-transform: $value;
+          transform: $value;
+}
+@mixin transition($value) {
+  -webkit-transition: $value;
+     -moz-transition: $value;
+      -ms-transition: $value;
+          transition: $value;
+}
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+     -moz-box-sizing: $value;
+      -ms-box-sizing: $value;
+          box-sizing: $value;
+}
+
+
+/**
+ * Gradient 
+ * 
+ * background-vertical = Top to Bottom
+ * background-horizontal = Left to Right
+ * background-diagonal-tl-br = Top-Left to Bottom-Right
+ * background-diagonal-bl-tr = Bottom-Left to Top-Right
+ */
+@mixin background-vertical($top, $bottom) {
+  background: $top;
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+  background:    -moz-linear-gradient(top, $top 0%, $bottom 100%);
+  background:         linear-gradient(to bottom, $top 0%, $bottom 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$top', endColorstr='$bottom',GradientType=0);
+}
+.bg-white-transparent {
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 29%, rgba(255, 255, 255, .82) 42%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 29%, rgba(255, 255, 255, .82) 42%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 29%, rgba(255, 255, 255, .82) 42%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='#00FFFFFF', GradientType=0); /* IE6-9 */
+}
+.modal-overlay-blue-mixin {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006699+0,78aeca+22,78aeca+100&0.5+0,1+22,1+100 */
+  background: -moz-linear-gradient(top, rgba(0, 102, 153, .5) 0%, rgba(120, 174, 202, 1) 22%, rgba(120, 174, 202, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,102,153,0.5) 0%,rgba(120,174,202,1) 22%,rgba(120,174,202,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,102,153,0.5) 0%,rgba(120,174,202,1) 22%,rgba(120,174,202,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80006699', endColorstr='#78aeca',GradientType=0 ); /* IE6-9 */
+}

@@ -1,0 +1,195 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Header SCSS.
+ */
+
+.pre-header {
+  position: relative;
+  z-index: 2;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  color: #484848;
+  font-size: 16px;
+  @media (max-width: 767px) {
+    display: inline-block !important;
+    width: 100%;
+  }
+  .logo {
+    display: none;
+    @media (max-width: 767px) {
+      display: inline-block;
+      max-width: 228px;
+      a { margin: 0 0 0 -6px; }
+    }
+  }
+  .mobile-icons {
+    display: inline-block;
+    width: 100%;
+    @media (max-width: 767px) {
+      float: right;
+      width: auto;
+    }
+  }
+  a { color: #024DA1; }
+  .dealer-center {
+    float: left;
+    font-size: 14px;
+    span {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    .change-location {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      a {
+        span {
+          font-style: normal;
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+        svg {
+          height: 30px;
+          width: auto;
+          margin: -7px 0 0 -7px;
+        }
+        @media (max-width: 767px) {
+          svg {
+            height: 28px;
+            margin-top: 0;
+            path { fill: #FFF; }
+          }
+        }
+      }
+      .cl-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        display: none;
+        min-width: 242px;
+        margin: 30px 0 0;
+        padding: 22px;
+        border: 1px solid #DDD;
+        background-color: $white;
+        @include box-shadow(0 2px 3px 0 rgba(0, 0, 0, .3));
+        .cl-modal-body {
+          h4 {
+            margin: 0 0 15px;
+            color: #484848;
+            font-size: 17px;
+            font-weight: 500;
+          }
+          .form-group {
+            input[type='text'] {
+              display: inline-block;
+              width: 98px;
+              padding: 10px 10px 10px 30px;
+              border-width: 1px;
+              background-image: url('../images/location-icon-without-bg.svg');
+              background-position: left center;
+              background-repeat: no-repeat;
+              color: #484848;
+              font-size: 12px;
+              font-weight: 500;
+            }
+            .btn {
+              float: right;
+              display: inline-block;
+              padding: 10px 20px;
+              border: none;
+              color: $white;
+              font-size: 12px;
+              font-weight: 500;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+  .phone {
+    float: right;
+    a {
+      color: #484848;
+      font-weight: 600;
+      font-family: 'Open Sans';
+      img { margin: 4px 0 0; }
+      svg {
+        height: 26px;
+        width: auto;
+        margin: -2px -10px 0 0;
+      }
+      span {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      @media (max-width: 767px) {
+        svg {
+          height: 28px;
+          margin-top: 0;
+          margin-left: 10px;
+          path { fill: #FFF; }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  @media (max-width: 767px) {
+    padding-top: 20px;
+    padding-bottom: 56px;
+  }
+  .logo {
+    @media (max-width: 767px) {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 348px;
+      margin: 0 0 0 -8px;
+    }
+  }
+  .filter {
+    span {
+      color: #484848;
+      font-size: 14px;
+      font-style: italic;
+      opacity: .7;
+    }
+    .car-company {
+      width: 110px;
+    }
+    .car-model {
+      width: 90px;
+      margin: 0 0 0 50px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      span {
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 20px;
+        text-align: center;
+      }
+      .car-company {
+        width: 48%;
+        margin-right: 2%;
+      }
+      .car-model {
+        width: 48%;
+        margin-left: 2%;
+      }
+    }
+  }
+}

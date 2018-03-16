@@ -1,0 +1,172 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Form SCSS
+ */
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
+textarea {
+  height: auto;
+  max-width: 100%;
+  padding: 19px 25px;
+  border: 2px solid #DDD;
+  background-color: $white;
+  font-size: 24px;
+  line-height: normal;
+  /*font-style: italic;*/
+  @include border-radius(50px);
+  @include box-shadow(none);
+  &.throbbing {
+    background-repeat: no-repeat;
+  }
+  &.error {
+    border-color: $red;
+    &:focus { border-color: $red; }
+  }
+}
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='number']:focus,
+input[type='tel']:focus,
+textarea:focus {
+  border-color: #F5891F;
+  @include box-shadow(0 2px 4px rgba(0, 0, 0, .2));
+}
+
+
+/**
+ * Custom select tag
+ */
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  display: inline-block;
+  min-width: 260px;
+  width: 260px;select {
+    display: none;
+  }
+  .select-items {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    margin: 12px 0 0;
+    border: 2px solid #DDD;
+    background-color: $white;
+    @include border-radius(20px);
+    @include box-shadow(0 2px 3px 0 rgba(0, 0, 0, .3));
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 16px;
+      width: 28px;
+      margin: -15px 0 0 -14px;
+      background-image: url('../images/drop-up-arrow-light-grey.svg');
+      background-position: center;
+      background-size: 100% auto;
+      content: '';
+    }
+    > div {
+      padding: 10px;
+      &:first-child { @include border-radius(18px 18px 0 0); }
+      &:last-child { @include border-radius(0 0 18px 18px); }
+    }
+  }
+}
+.select-selected {
+  width: 100%;
+  padding: 20px 60px 20px 30px;
+  border: 2px solid #DDD;
+  background-image: url('../images/arrow-down.svg');
+  background-position: 86% center;
+  background-repeat: no-repeat;
+  background-size: 18px auto;
+  color: #484848;
+  font-size: 20px;
+  font-style: italic;
+  @include border-radius(50px);
+  @include appearance(none);
+  &.select-arrow-active:after {
+    top: 7px;
+  }
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+/* Select tag design */
+select {
+  &:focus {
+    border: 1px solid #EEE;
+    outline: auto;
+  }
+  &.dd-border-bottom {
+    padding: 10px 30px 10px 0;
+    border: none;
+    border-bottom: 2px solid #BBB;
+    background-color: transparent;
+    background-image: url('../images/arrow-down.svg');
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 18px auto;
+    color: #484848;
+    font-size: 16px;
+    /*font-style: italic;*/
+    font-weight: 500;
+    @include appearance(none);
+  }
+  &.car-company { width: 43%; }
+  &.car-model {
+    float: right;
+    width: 35%;
+  }
+
+  &.dd-rounded {
+    min-width: 260px;
+    padding: 20px 60px 20px 30px;
+    border: 2px solid #DDD;
+    background-image: url('../images/arrow-down.svg');
+    background-position: 86% center;
+    background-repeat: no-repeat;
+    background-size: 18px auto;
+    color: #484848;
+    font-size: 20px;
+    font-style: italic;
+    @include border-radius(50px);
+    @include appearance(none);
+  }
+}
+
+/**
+ * Validation Form
+ */
+.validation-form-wrap {
+  .form-field {
+    width: 33.3333% !important;
+    margin: 0 15px 30px;
+    input[type='text'],
+    input[type='password'] {
+      width: 100%;
+      @include border-radius(7px);
+    }
+  }
+  .form-btn {
+    width: 33.3333% !important;
+    margin: 0 15px 30px;
+    button {
+      padding: 10px !important;
+      line-height: normal !important;
+    }
+  }
+}

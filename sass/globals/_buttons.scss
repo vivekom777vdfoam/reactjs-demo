@@ -1,0 +1,33 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Form SCSS
+ */
+
+.btn {
+  padding: 15px 26px 16px;
+  /*border: 2px solid #FFF;*/
+  border: none;
+  background-color: #F5891F;
+  color: #FFF;
+  font-size: 24px;
+  line-height: normal;
+  /*font-style: italic;*/
+  font-weight: 700;
+  cursor: pointer;
+  @include border-radius(50px);
+  /*@include box-shadow(0 20px 18px -18px rgba(0, 0, 0, .7));*/
+  @include box-shadow(2px 3px 3px 0 rgba(0, 0, 0, .25));
+  &:hover {
+    background-color: #FF9934;
+  }
+  &:focus {
+    background-color: #E97B0F;
+    @include box-shadow(none);
+  }
+  @media (max-width: 767px) {
+    /*border: 1px solid #FFF;*/
+    font-size: 18px;
+  }
+}

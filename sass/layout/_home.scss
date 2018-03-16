@@ -1,0 +1,338 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Home page SCSS
+ */
+
+
+/**
+ * Banner
+ */
+.banner-title {
+  ul {
+    padding: 0 0 120px;
+    list-style: none;
+    li {
+      position: relative;
+      display: inline-block;
+      margin: 0 10px;
+      color: #484848;
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: uppercase;
+      &:nth-child(1)::before { display: none; }
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 4px;
+        width: 4px;
+        margin: 12px -13px 0;
+        background-color: #484848;
+        content: '';
+        @include border-radius(5px);
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    ul {
+      padding-bottom: 40px;
+      li {
+        margin: 0 6px;
+        font-size: 12px;
+        &::before {
+          height: 3px;
+          width: 3px;
+          margin: 5px -9px 0;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  padding: 0 0 65px;
+  .btn-group {
+    .btn {
+      display: inline-block;
+      min-width: 300px;
+      margin: 0 0 35px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 767px) {
+    .btn-group {
+      .btn {
+        min-width: 270px;
+        margin: 0 0 20px;
+      }
+    }
+    .flex { display: inline-block !important; }
+  }
+  .left-side {
+    padding: 75px 0 0;
+    @media (max-width: 767px) {
+      display: inline-block;
+      width: 100%;
+      padding: 0 0 50px;
+      .btn-group {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .right-side {
+    margin: 0 -100px 0 0;
+    @media (max-width: 1450px) {
+      margin-right: 0;
+      text-align: center;
+    }
+    @media (max-width: 767px) {
+      img {
+        max-width: 270px;
+      }
+    }
+  }
+}
+
+.gallery-img {
+  ul.gallery-img-item {
+    list-style: none;
+    li {
+      float: left;
+      display: inline-block;
+      @include calc('width', '33.3333% - 13.3333px');
+      margin: 0 20px 20px 0;
+      &:nth-child(3n) { margin-right: 0; }
+      img {
+        width: 100%;
+      }
+    }
+    @media (max-width: 767px) {
+      li {
+        @include calc('width', '50% - 10px');
+        &:nth-child(3n) { margin-right: 20px; }
+        &:nth-child(2n) { margin-right: 0; }
+      }
+    }
+  }
+  ul.car-details {
+    li { color: $white; }
+  }
+}
+ul.car-details {
+  list-style: none;
+  li {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+    color: #333;
+    font-size: 19px;
+    &:nth-child(1)::before { display: none; }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 4px 0 0 -24px;
+      font-weight: bold;
+      content: '|';
+    }
+  }
+  @media (max-width: 767px) {
+    display: inline-block;
+    width: 100%;
+    list-style: disc;
+    li {
+      width: 100%;
+      margin: 0;
+      padding: 0 0 0 20px;
+      &:nth-child(1)::before { display: inline-block; }
+      &::before {
+        margin: 0;
+        content: '-';
+      }
+    }
+  }
+}
+
+.gallery-btn {
+  @media (max-width: 767px) {
+    .modal {
+      width: 100%;
+    }
+  }
+}
+.gallery-icon {
+  position: relative;
+  display: inline-block;
+  color: #FFF;
+  font-size: 12px;
+  @media (max-width: 992px) {
+    margin-top: 30px;
+  }
+  @media (max-width: 767px) {
+    display: inline-block;
+    height: auto;
+    @include calc('width', '100% + 40px');
+    margin: 0 -20px;
+    padding: 15px 10px;
+    background-color: $black;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  /*&::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 30px;
+    margin: -42px 0 0 77px;
+    background-image: url('../images/arrow-round-right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 44px;
+    width: 44px;
+    margin: -4px 0 0 76px;
+    background-image: url('../images/gallery-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+  }*/
+  svg,
+  img {
+    height: auto;
+    width: 158px;
+    margin: -60px 0 0;
+  }
+  /*span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: -50px 0 0;
+    white-space: nowrap;
+  }*/
+}
+
+
+/**
+ * How it Works
+ */
+.how-it-works {
+  display: inline-block;
+  width: 100%;
+  padding: 50px 0 80px;
+  background-color: #E5E7E6;
+  color: #484848;
+  font-style: italic;
+  .container {
+    max-width: 870px;
+  }
+  h2 {
+    margin: 0 0 45px;
+    text-transform: uppercase;
+  }
+  .row {
+    .grid {
+      @include calc('width', '33.3333% - 47px');
+      margin: 0 70px 0 0;
+      &:last-child { margin-right: 0; }
+      h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      p { font-size: 14px; }
+    }
+    @media (max-width: 767px) {
+      display: inline-block !important;
+      .grid {
+        width: 100%;
+        margin: 0 0 30px;
+      }
+    }
+  }
+}
+
+
+/**
+ * Schedule TEST DRIVE
+ */
+.test-drive-btn {
+  position: relative;
+  top: -14px;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+/**
+ * CarsHome Suggestion
+ */
+.carshome-suggestion {
+  display: inline-block;
+  width: 100%;
+  padding: 80px 0 100px;
+  color: #484848;
+  font-style: italic;
+  h2 {
+    margin: 0 0 70px;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      margin: 0 45px 0 0;
+      padding: 45px 40px 20px;
+      background-color: #EAEAEA;
+      text-align: center;
+      @include border-radius(30px);
+      @include box-shadow(2px 2px 6px 2px rgba(0, 0, 0, .15));
+      &:last-child { margin-right: 0; }
+      h3 {
+        margin: 0 0 35px;
+        font-size: 24px;
+      }
+      img {
+        margin: 0 0 50px;
+      }
+      span {
+        display: inline-block;
+        padding: 0 0 10px;
+        font-weight: 600;
+      }
+      p {
+        padding: 0 0 10px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    ul {
+      display: inline-block;
+      li {
+        width: 100%;
+        margin: 0 0 30px;
+      }
+    }
+  }
+}

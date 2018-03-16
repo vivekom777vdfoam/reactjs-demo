@@ -1,0 +1,34 @@
+/**
+ * @file
+ * SCSS file for variables.
+ *
+ * All variables used in SCSS are defined in this file.
+ */
+
+
+/**
+ * Font face
+ */
+/*$opensans-extrabold: 'OpenSans Extrabold';*/
+
+/* URLs */
+/*$url-opensans-extrabold: url('../fonts/OpenSans/OpenSans-ExtraBold.woff');*/
+
+
+/* Color code */
+$white: #FFF;
+$black: #000;
+$red:   #900;
+
+
+/**
+ * Media query
+ */
+$small-desktop: 1200px;
+$ipad: 1024x;
+$ipad-portrait: 992px;
+$mobile: 767px;
+$mobile-landscape: 600px;
+$mobile-portrait: 480px;
+$small-mobile-portrait: 360px;
+/* End */

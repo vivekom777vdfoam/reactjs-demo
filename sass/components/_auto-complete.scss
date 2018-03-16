@@ -1,0 +1,54 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Responsive Utilities.
+ */
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .popup-form__text-field {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+.autocomplete-items {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  border: 1px solid #D4D4D4;
+  border-top: none;
+  border-bottom: none;
+  > div {
+    padding: 10px;
+    border-bottom: 1px solid #D4D4D4;
+    background-color: #FFF;
+    cursor: pointer;
+    &:first-child {
+      border-top: 1px solid #D4D4D4;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 16px;
+        width: 28px;
+        margin: -15px 0 0 -14px;
+        background-image: url('../images/drop-up-arrow.svg');
+        background-position: center;
+        background-size: 100% auto;
+        content: '';
+      }
+    };
+    &:hover {
+      background-color: #E9E9E9;
+    }
+  }
+}
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #FFF;
+}

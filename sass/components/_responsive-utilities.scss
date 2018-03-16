@@ -1,0 +1,18 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Responsive Utilities.
+ */
+
+.show-in-mobile {
+  display: none !important;
+  @media (max-width: 767px) {
+    display: inline-block !important;
+  }
+}
+.hide-in-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
